@@ -1,38 +1,226 @@
+:root {
+  --main-accent-color: #7fffd4;
+  --error-accent-color: #fde36e;
+  --main-font-family: "Lato";
+}
 .App {
+  margin: 0;
+  padding: 0;
+  font-family: var(--main-font-family);
+}
+h3 {
+  margin: 0;
+}
+.lato-light {
+  font-family: var(--main-font-family);
+  font-weight: 300;
+}
+.spinner {
+  text-align: center;
+  margin: 3rem;
+}
+/* Navbar */
+.navbar-container {
+  width: 100%;
+  height: 5rem;
+  background-color: #444;
+}
+.logo {
+  width: 10rem;
+  height: 100%;
+  margin-left: 10rem;
+  /* With more research I found that using filter not only works but apparently works on more browers than fill. Used (https://codepen.io/sosuke/pen/Pjoqqp) to grab the aquamarine color that is being used throughout the rest of the webpage. */
+  filter: invert(87%) sepia(26%) saturate(653%) hue-rotate(94deg)
+    brightness(98%) contrast(109%);
+}
+@media only screen and (max-width: 767px) {
+  .logo {
+    width: 8rem;
+    height: 100%;
+    display: block;
+    margin: auto;
+  }
+}
+/* End Navbar */
+/* Hero */
+.hero {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("images/photo-couch.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-content {
+  position: relative;
+  color: white;
+  text-align: center;
+  margin: 1rem;
+}
+.hero-tag {
+  font-size: 1rem;
+}
+.hero-title {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.hero-subtitle {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+.get-started-button {
+  padding: 0.625rem 1.5rem;
+  background-color: var(--main-accent-color);
+  border-radius: 23px;
+  font-weight: 700;
+  border: none;
+  transition: 0.3s;
+  margin-top: 1rem;
+}
+.get-started-button:hover {
+  background-color: #69d3b0;
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .hero-content {
+    position: absolute;
+    bottom: 5rem;
+    left: 6rem;
+    color: white;
+    text-align: left;
+    margin: 1rem;
+  }
+  .hero-tag {
+    font-size: 1.25rem;
+  }
+  .hero-title {
+    font-size: 2rem;
+    margin: 0;
+  }
+  .hero-subtitle {
+    width: 45%;
+    text-align: justify;
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .hero-content {
+    position: absolute;
+    bottom: 5rem;
+    left: 10rem;
+    color: white;
+    text-align: left;
+    margin: 1rem;
+  }
+  .hero-tag {
+    font-size: 1.5rem;
+  }
+  .hero-title {
+    font-size: 3rem;
+    margin: 0;
+  }
+  .hero-subtitle {
+    width: 45%;
+    text-align: justify;
+    font-size: 1.25rem;
+  }
+}
+/* End Hero */
+.section-title {
+  font-size: 2.5rem;
+}
+/* HowItWorks */
+.steps-container {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.steps-inner-container {
+  margin-right: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  text-align: justify;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.step-information {
+  text-align: center;
+}
+.step-number {
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0;
+}
+.divider {
+  height: 5px;
+  width: 4rem;
+  margin: 0.75rem auto;
+  background-color: var(--main-accent-color);
+}
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .steps-inner-container {
+    margin-right: 6rem;
+    margin-left: 6rem;
+    margin-bottom: 2rem;
+    text-align: justify;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width: 768px) {
+  .step-number {
+    font-size: 4rem;
   }
-  to {
-    transform: rotate(360deg);
+  .steps-inner-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    column-gap: 1rem;
+    row-gap: 2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    text-align: justify;
   }
+}
+@media only screen and (min-width: 992px) {
+  .steps-inner-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    column-gap: 2rem;
+    margin-right: 5rem;
+    margin-left: 5rem;
+    margin-bottom: 3rem;
+    text-align: justify;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .steps-inner-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    text-align: justify;
+    margin-right: 10rem;
+    margin-left: 10rem;
+    margin-bottom: 6rem;
+  }
+}
+/* End HowItWorks */
+/* HowItWorksError */
+.error-container {
+  display: block;
+  margin: 2rem;
+}
+.error-message {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.error-button {
+  padding: 0.625rem 1.5rem;
+  background-color: var(--error-accent-color);
+  border-radius: 23px;
+  font-weight: 700;
+  border: none;
+  transition: 0.3s;
+  margin-top: 1rem;
+}
+.error-button:hover {
+  background-color: #e2cb62;
 }
