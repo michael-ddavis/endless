@@ -34,3 +34,7 @@ $ npm i
 $ npm start
 ```
 
+
+Notes for the reviewers:
+
+I attempted to write some unit tests but couldn't get them to work completely. This is the reason why the test files are commented out. 
