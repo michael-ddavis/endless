@@ -28,7 +28,7 @@ gh repo clone michael-ddavis/endless
 $ npm i
 ```
 
-2. Once this is completed, run 'npm start'. A window or tab will open displaying the Endless website. Happy Reviewing :)
+3. Once this is completed, run 'npm start'. A window or tab will open displaying the Endless website. Happy Reviewing :)
 
 ```
 $ npm start
