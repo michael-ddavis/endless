@@ -8,13 +8,12 @@ function HowItWorks() {
   let [isError, setError] = useState(null);
   let [isLoading, setLoading] = useState(null);
 
-  const fetchData = (e) => {
+  const fetchData = () => {
     setLoading(true);
     api
       .getData()
       .then((response) => {
         getSteps(response.data);
-        setError(false);
         setLoading(false);
       })
       .catch((error) => {
